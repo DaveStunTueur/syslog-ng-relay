@@ -1,0 +1,21 @@
+[Unit]
+Description=System Logger Daemon
+Conflicts=emergency.service emergency.target
+After=network-online.target
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/sysconfig/syslog-ng
+EnvironmentFile=-/etc/default/syslog-ng
+ExecStart=/opt/syslog-ng/sbin/syslog-ng -F --no-caps --enable-core $SYSLOGNG_OPTIONS
+ExecReload=/bin/kill -HUP $MAINPID
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+User=syslogng
+Group=syslogng
+AmbientCapabilities=CAP_CHOWN CAP_FOWNER CAP_DAC_OVERRIDE CAP_DAC_READ_SEARCH CAP_NET_BIND_SERVICE
+WorkingDirectory=/opt/syslog-ng/var
+
+[Install]
+WantedBy=multi-user.target
