@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "networkInterfaceName": {
+            "value": "syslog5238"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/d31f4aab-377f-4ff2-aae6-7fea229f1099/resourceGroups/syslog-ng/providers/Microsoft.Network/virtualNetworks/syslog-ng-vnet"
+        },
+        "virtualMachineName": {
+            "value": "syslog5"
+        },
+        "virtualMachineComputerName": {
+            "value": "syslog5"
+        },
+        "virtualMachineRG": {
+            "value": "syslog-ng"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2_v3"
+        },
+        "adminUsername": {
+            "value": "langloid"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "customData": {
+            "value": null
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "21:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        }
+    }
+}
